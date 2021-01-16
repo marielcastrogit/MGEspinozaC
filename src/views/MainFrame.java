@@ -4,6 +4,9 @@
  * and open the template in the editor.
  */
 package views;
+import controllers.EmpleadosController;
+import javax.swing.JDesktopPane;
+import javax.swing.JMenuItem;
 
 /**
  *
@@ -16,6 +19,7 @@ public class MainFrame extends javax.swing.JFrame {
      */
     public MainFrame() {
         initComponents();
+        setControllers();
     }
 
     /**
@@ -30,10 +34,11 @@ public class MainFrame extends javax.swing.JFrame {
         jdesktopPane = new javax.swing.JDesktopPane();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
-        menuResgistrar = new javax.swing.JMenuItem();
+        menuRegistrar = new javax.swing.JMenuItem();
         menuEditar = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new java.awt.BorderLayout());
 
         javax.swing.GroupLayout jdesktopPaneLayout = new javax.swing.GroupLayout(jdesktopPane);
         jdesktopPane.setLayout(jdesktopPaneLayout);
@@ -50,9 +55,9 @@ public class MainFrame extends javax.swing.JFrame {
 
         jMenu1.setText("Empleados");
 
-        menuResgistrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/images/iconfinder_folder_job_seeker_employee_unemployee_work_2620522 (1).png"))); // NOI18N
-        menuResgistrar.setText("Registrar empleados");
-        jMenu1.add(menuResgistrar);
+        menuRegistrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/images/iconfinder_folder_job_seeker_employee_unemployee_work_2620522 (1).png"))); // NOI18N
+        menuRegistrar.setText("Registrar empleados");
+        jMenu1.add(menuRegistrar);
 
         menuEditar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/images/iconfinder_cv_job_seeker_employee_unemployee_work_2620524.png"))); // NOI18N
         menuEditar.setText("Editar empleado");
@@ -100,11 +105,27 @@ public class MainFrame extends javax.swing.JFrame {
         });
     }
 
+    public JDesktopPane getDesktopPane() {
+        return jdesktopPane;
+    }
+    
+    public void setControllers(){
+        ec = new EmpleadosController(this);
+        menuRegistrar.addActionListener(ec);  
+    }
+
+    public JMenuItem getMenuRegistrar() {
+        return menuRegistrar;
+    }
+    
+    
+    
+    private EmpleadosController ec;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JDesktopPane jdesktopPane;
     private javax.swing.JMenuItem menuEditar;
-    private javax.swing.JMenuItem menuResgistrar;
+    private javax.swing.JMenuItem menuRegistrar;
     // End of variables declaration//GEN-END:variables
 }

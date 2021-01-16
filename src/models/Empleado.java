@@ -12,9 +12,10 @@ import java.io.Serializable;
  * @author Usuario
  */
 public class Empleado implements Serializable{
-    private String primerNombre, segundoNombre, primerApellido, segundoApellido, 
-            fechaNacimiento, oficio, fechaContrato;
-    private int añosExperiencia;
+    private String primerNombre, segundoNombre, primerApellido, segundoApellido, oficio;
+    private Object fechaContrato, 
+            fechaNacimiento,
+            añosExperiencia;
     
    
 
@@ -50,11 +51,11 @@ public class Empleado implements Serializable{
         this.segundoApellido = segundoApellido;
     }
 
-    public String getFechaNacimiento() {
+    public Object getFechaNacimiento() {
         return fechaNacimiento;
     }
 
-    public void setFechaNacimiento(String fechaNacimiento) {
+    public void setFechaNacimiento(Object fechaNacimiento) {
         this.fechaNacimiento = fechaNacimiento;
     }
 
@@ -66,19 +67,19 @@ public class Empleado implements Serializable{
         this.oficio = oficio;
     }
 
-    public String getFechaContrato() {
+    public Object getFechaContrato() {
         return fechaContrato;
     }
 
-    public void setFechaContrato(String fechaContrato) {
+    public void setFechaContrato(Object fechaContrato) {
         this.fechaContrato = fechaContrato;
     }
 
-    public int getAñosExperiencia() {
+    public Object getAñosExperiencia() {
         return añosExperiencia;
     }
 
-    public void setAñosExperiencia(int añosExperiencia) {
+    public void setAñosExperiencia(Object añosExperiencia) {
         this.añosExperiencia = añosExperiencia;
     }
     
